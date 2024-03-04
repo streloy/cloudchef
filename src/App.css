@@ -1,38 +1,84 @@
-.App {
-  text-align: center;
+.hv-wrapper {
+  display: flex;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.hv-wrapper .hv-item {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  margin: auto;
+}
+.hv-wrapper .hv-item .hv-item-parent {
+  margin-bottom: 50px;
+  position: relative;
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+}
+.hv-wrapper .hv-item .hv-item-parent:after {
+  position: absolute;
+  content: "";
+  width: 1px;
+  height: 25px;
+  bottom: 0;
+  left: 50%;
+  background-color: rgba(0, 0, 0, 1);
+  transform: translateY(100%);
+}
+.hv-wrapper .hv-item .hv-item-children {
+  display: flex;
+  justify-content: center;
+}
+.hv-wrapper .hv-item .hv-item-children .hv-item-child {
+  padding: 0 15px;
+  position: relative;
+}
+.hv-wrapper .hv-item .hv-item-children .hv-item-child:before,
+.hv-wrapper .hv-item .hv-item-children .hv-item-child:not(:only-child):after {
+  content: "";
+  position: absolute;
+  background-color: rgba(0, 0, 0, 1);
+  left: 0;
+}
+.hv-wrapper .hv-item .hv-item-children .hv-item-child:before {
+  left: 50%;
+  top: 0;
+  transform: translateY(-100%);
+  width: 1px;
+  height: 25px;
+}
+.hv-wrapper .hv-item .hv-item-children .hv-item-child:after {
+  top: -25px;
+  transform: translateY(-100%);
+  height: 1px;
+  width: 100%;
+}
+.hv-wrapper .hv-item .hv-item-children .hv-item-child:first-child:after {
+  left: 50%;
+  width: 50%;
+}
+.hv-wrapper .hv-item .hv-item-children .hv-item-child:last-child:after {
+  width: calc(50% + 1px);
 }
 
-.App-link {
-  color: #61dafb;
+
+.node circle {
+  fill: rgb(247, 106, 214);
+  stroke: rgb(184, 37, 81);
+  stroke-width: 1.5px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.node text {
+  font-size: 14px;
+}
+
+text {
+  color: red;
+}
+
+.node {
+  cursor: pointer;
+}
+
+path.link {
+  fill: none;
+  stroke: #2593b8;
+  stroke-width: 1.5px;
 }

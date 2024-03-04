@@ -1,0 +1,27 @@
+{
+  "name": "Cloudchef",
+  "version": "1.0.0",
+  "description": "Backend api developement for Cloudchef",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js"
+  },
+  "keywords": [
+    "backend",
+    "api",
+    "nodejs",
+    "mysql"
+  ],
+  "author": "Md Mobinur Rahman Saim",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.0.0",
+    "express": "^4.17.3",
+    "mongodb": "^6.4.0",
+    "mongoose": "^6.10.0",
+    "multer": "^1.4.4"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.16"
+  }
+}
